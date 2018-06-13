@@ -8,10 +8,11 @@ public class main {
 		
 		Random rand = new Random();
 
-		IntSet S = new IntSetArr();
+		IntSet S = new IntSetBitVec();
 	    
+	    //(maxelems, maxval)
 		S.intSetImp(50, 100);
-		while (S.size() < 100)
+		while (S.size() < 10)
 			S.insert(rand.nextInt() % 50);
 	        
 		v = S.report();
