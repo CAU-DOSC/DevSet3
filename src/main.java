@@ -8,16 +8,19 @@ public class main {
 		
 		Random rand = new Random();
 
-		IntSet S = new IntSetArr();
+		IntSet S = new IntSetBST();
 	    
 		S.intSetImp(50, 100);
-		while (S.size() < 100)
+		while(S.size() < 99){
 			S.insert(rand.nextInt() % 50);
-	        
+		}
+		
+	       
 		v = S.report();
 	    
 	    for (int i = 0; i < v.length; i++)
 	    	System.out.println(v[i]);
+	    	
 	}
 
 }
