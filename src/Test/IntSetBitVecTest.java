@@ -1,19 +1,17 @@
 package Test;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+import Set.IntSetBitVec;
 
-import Set.IntSetArr;
+public class IntSetBitVecTest {
+	IntSetBitVec S = new IntSetBitVec();
 
-public class IntSetArrTest {
-	IntSetArr S = new IntSetArr();
-
-	IntSetArr timeTest = new IntSetArr();
+	IntSetBitVec timeTest = new IntSetBitVec();
 	
 	final int bigNum = 50000;
 	
-	public IntSetArrTest() {
+	public IntSetBitVecTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -24,13 +22,8 @@ public class IntSetArrTest {
 	}
 
 	@Test
-	public void testIntSetImp() {
-		
-	}
-
-	@Test
 	public void testInsert() {
-		IntSetArr test = new IntSetArr();
+		IntSetBitVec test = new IntSetBitVec();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test
@@ -54,6 +47,7 @@ public class IntSetArrTest {
 		
 		assertArrayEquals(compareSort, S.report());
 	}
+	
 	@Test
 	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
@@ -61,6 +55,8 @@ public class IntSetArrTest {
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
+		
+		System.out.println(timeTest.size());
 	}
 	
 	@Test
@@ -70,6 +66,5 @@ public class IntSetArrTest {
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(bigNum - idx);
 		}
-		timeTest.report();
 	}
 }

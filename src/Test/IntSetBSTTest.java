@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Set.IntSetArr;
+import Set.IntSetBST;
 
-public class IntSetArrTest {
-	IntSetArr S = new IntSetArr();
+public class IntSetBSTTest {
+	IntSetBST S = new IntSetBST();
 
-	IntSetArr timeTest = new IntSetArr();
+	IntSetBST timeTest = new IntSetBST();
 	
-	final int bigNum = 50000;
+	final int bigNum = 10000;
 	
-	public IntSetArrTest() {
+	public IntSetBSTTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -24,13 +24,8 @@ public class IntSetArrTest {
 	}
 
 	@Test
-	public void testIntSetImp() {
-		
-	}
-
-	@Test
 	public void testInsert() {
-		IntSetArr test = new IntSetArr();
+		IntSetBST test = new IntSetBST();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test
@@ -62,7 +57,6 @@ public class IntSetArrTest {
 			timeTest.insert(idx);
 		}
 	}
-	
 	@Test
 	public void timeSortTest() {
 		timeTest.intSetImp(bigNum, bigNum);
