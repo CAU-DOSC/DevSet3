@@ -20,13 +20,14 @@ public class IntSetBitVec implements IntSet {
 			bits[i] = 0;
 		}
 		size = 0;
+		max_length = maxelems;
 		max_val = maxval;
 	}
 
 	@Override
 	public void insert(int element) {
 		int abs_element = Math.abs(element);
-		if(size >= max_val) {
+		if(size >= max_length) {
 			throw new ArrayIndexOutOfBoundsException("max_length exceeded.");
 		}
 		if((bits[abs_element >> 3] & (1<<(abs_element & 7))) != 0) {
