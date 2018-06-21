@@ -1,15 +1,21 @@
 package Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import org.junit.Test;
+
+import Set.IntSetBins;
 import Set.IntSetList;
 
-public class IntSetListTest {
-	IntSetList S = new IntSetList();
-
+public class IntSetBinsTest {
+	
+	IntSetBins S = new IntSetBins();
+	
 	final int bigNum = 50000;
 	
-	public IntSetListTest() {
+	public IntSetBinsTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -20,13 +26,8 @@ public class IntSetListTest {
 	}
 
 	@Test
-	public void testIntSetImp() {
-		
-	}
-
-	@Test
 	public void testInsert() {
-		IntSetList test = new IntSetList();
+		IntSetBins test = new IntSetBins();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test

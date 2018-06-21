@@ -2,14 +2,15 @@ package Test;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Set.IntSetList;
+import Set.IntSetBitVec;
 
-public class IntSetListTest {
-	IntSetList S = new IntSetList();
+public class IntSetBitVecTest {
+	
+	IntSetBitVec S = new IntSetBitVec();
 
 	final int bigNum = 50000;
 	
-	public IntSetListTest() {
+	public IntSetBitVecTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -20,13 +21,8 @@ public class IntSetListTest {
 	}
 
 	@Test
-	public void testIntSetImp() {
-		
-	}
-
-	@Test
 	public void testInsert() {
-		IntSetList test = new IntSetList();
+		IntSetBitVec test = new IntSetBitVec();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test
@@ -35,7 +31,7 @@ public class IntSetListTest {
 		test.insert(10);
 		
 		test.insert(5); // over size test
-		
+	
 		assertEquals(2, test.size());
 	}
 
@@ -53,7 +49,7 @@ public class IntSetListTest {
 	
 	@Test
 	public void testP() {
-		IntSetList timeTest = new IntSetList();
+		IntSetBitVec timeTest = new IntSetBitVec();
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {

@@ -1,15 +1,17 @@
 package Test;
 
 import static org.junit.Assert.*;
-import org.junit.Test;
-import Set.IntSetList;
 
-public class IntSetListTest {
-	IntSetList S = new IntSetList();
+import org.junit.Test;
+
+import Set.IntSetBST;
+
+public class IntSetBSTTest {
+	IntSetBST S = new IntSetBST();
 
 	final int bigNum = 50000;
 	
-	public IntSetListTest() {
+	public IntSetBSTTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -20,13 +22,8 @@ public class IntSetListTest {
 	}
 
 	@Test
-	public void testIntSetImp() {
-		
-	}
-
-	@Test
 	public void testInsert() {
-		IntSetList test = new IntSetList();
+		IntSetBST test = new IntSetBST();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test
@@ -53,7 +50,7 @@ public class IntSetListTest {
 	
 	@Test
 	public void testP() {
-		IntSetList timeTest = new IntSetList();
+		IntSetBST timeTest = new IntSetBST();
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
