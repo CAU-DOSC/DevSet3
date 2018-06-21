@@ -1,3 +1,4 @@
+package Set;
 
 public class IntSetBST implements IntSet {
 	
@@ -27,18 +28,22 @@ public class IntSetBST implements IntSet {
 
 	
 	@Override
-	public void intSetImp(int maxval, int maxelems) {
+	public void intSetImp(int maxelems, int maxval) {
 		//초기상태 저장
 		this.root = null;
 		this.maxval = maxval;
 		this.maxelems = maxelems;
 		this.search_count = 0;
-		this.array_result = new int[this.maxelems - 1];
+		this.array_result = new int[this.maxelems];
 		this.size = 0;
 	}
 	
 	@Override
 	public void insert(int element) {
+		if(element > maxval || size >= maxelems) {
+			return;
+		}
+		
 		BSTNode newBSTNode = new BSTNode(element);
 		
 		//초기 root 삽입 

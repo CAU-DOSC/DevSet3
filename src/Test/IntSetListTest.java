@@ -7,7 +7,7 @@ import Set.IntSetList;
 public class IntSetListTest {
 	IntSetList S = new IntSetList();
 
-	final int bigNum = 10000;
+	final int bigNum = 50000;
 	
 	public IntSetListTest() {
 		S.intSetImp(5, 100);

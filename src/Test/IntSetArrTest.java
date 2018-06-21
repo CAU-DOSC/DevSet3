@@ -4,45 +4,59 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Set.IntSetList;
 import Set.IntSetArr;
 
 public class IntSetArrTest {
 
-	final int bigNum = 10000;
+	IntSetArr S = new IntSetArr();
+
+	final int bigNum = 50000;
 	
 	public IntSetArrTest() {
-
-	}
-	
-	@Test
-	public void testIntSetArr() {
-		fail("Not yet implemented");
+		S.intSetImp(5, 100);
+		
+		S.insert(1);
+		S.insert(10);
+		S.insert(5);
+		S.insert(3);
+		S.insert(7);
 	}
 
 	@Test
 	public void testIntSetImp() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testInsert() {
-		fail("Not yet implemented");
+		IntSetArr test = new IntSetArr();
+		test.intSetImp(2, 10);
+		
+		test.insert(11); // over maxVal test
+		
+		test.insert(3);
+		test.insert(10);
+		
+		test.insert(5); // over size test
+		
+		assertEquals(2, test.size());
 	}
 
 	@Test
-	public void testSize() {
-		fail("Not yet implemented");
+	public void testSize() {	
+		assertEquals(5, S.size());
 	}
 
 	@Test
 	public void testReport() {
-		fail("Not yet implemented");
+		int[] compareSort = {1, 3, 5, 7, 10};
+		
+		assertArrayEquals(compareSort, S.report());
 	}
 	
 	@Test
 	public void testP() {
-		IntSetList timeTest = new IntSetList();
+		IntSetArr timeTest = new IntSetArr();
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {

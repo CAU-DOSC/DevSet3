@@ -13,7 +13,7 @@ public class main {
 		
 		Random rand = new Random();
 		
-		IntSet S = new IntSetBins();
+		IntSet S = new IntSetBitVec();
 	    
 		S.intSetImp(m, maxval);
 
@@ -24,5 +24,6 @@ public class main {
 	    
 	    for (int i = 0; i < v.length; i++)
 	    	System.out.println(v[i] + " / line : " + i);
+	    	
 	}
 }

@@ -21,11 +21,12 @@ public class IntSetList implements IntSet {
 	@Override
 	public void intSetImp(int maxelems, int maxval) {
 		// TODO Auto-generated method stub
-		
 		// Check maxelems > 0
 		if(maxelems > 1) {
 			this.maxelems = maxelems;
 			this.maxval = maxval;
+		}else {
+			
 		}
 	}
 
@@ -34,8 +35,6 @@ public class IntSetList implements IntSet {
 		// TODO Auto-generated method stub
 		if(size() < maxelems && element <= maxval && !intList.contains(element)) {
 			intList.add(element);
-		}else {
-			
 		}
 	}
 

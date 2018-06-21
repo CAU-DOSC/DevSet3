@@ -1,21 +1,16 @@
 package Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
+import Set.IntSetBitVec;
 
-import Set.IntSetBins;
-import Set.IntSetList;
+public class IntSetBitVecTest {
+	
+	IntSetBitVec S = new IntSetBitVec();
 
-public class IntSetBinsTest {
-	
-	IntSetBins S = new IntSetBins();
-	
 	final int bigNum = 50000;
 	
-	public IntSetBinsTest() {
+	public IntSetBitVecTest() {
 		S.intSetImp(5, 100);
 		
 		S.insert(1);
@@ -27,7 +22,7 @@ public class IntSetBinsTest {
 
 	@Test
 	public void testInsert() {
-		IntSetBins test = new IntSetBins();
+		IntSetBitVec test = new IntSetBitVec();
 		test.intSetImp(2, 10);
 		
 		test.insert(11); // over maxVal test
@@ -54,11 +49,12 @@ public class IntSetBinsTest {
 	
 	@Test
 	public void testP() {
-		IntSetList timeTest = new IntSetList();
+		IntSetBitVec timeTest = new IntSetBitVec();
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
 	}
+
 }
