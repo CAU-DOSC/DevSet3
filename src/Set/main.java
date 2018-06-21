@@ -13,7 +13,7 @@ public class main {
 		
 		Random rand = new Random();
 		
-		IntSet S = new IntSetBST();
+		IntSet S = new IntSetBitVec();
 	    
 		S.intSetImp(m, maxval);
 

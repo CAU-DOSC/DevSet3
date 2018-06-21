@@ -61,5 +61,4 @@ public class IntSetBinsTest {
 			timeTest.insert(idx);
 		}
 	}
-
 }

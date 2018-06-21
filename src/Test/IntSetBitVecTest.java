@@ -31,7 +31,7 @@ public class IntSetBitVecTest {
 		test.insert(10);
 		
 		test.insert(5); // over size test
-	
+		
 		assertEquals(2, test.size());
 	}
 
