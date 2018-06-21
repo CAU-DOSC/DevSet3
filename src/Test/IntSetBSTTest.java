@@ -9,7 +9,9 @@ import Set.IntSetBST;
 public class IntSetBSTTest {
 	IntSetBST S = new IntSetBST();
 
-	final int bigNum = 50000;
+	IntSetBST timeTest = new IntSetBST();
+	
+	final int bigNum = 10000;
 	
 	public IntSetBSTTest() {
 		S.intSetImp(5, 100);
@@ -47,15 +49,21 @@ public class IntSetBSTTest {
 		
 		assertArrayEquals(compareSort, S.report());
 	}
-	
 	@Test
-	public void testP() {
-		IntSetBST timeTest = new IntSetBST();
+	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
 	}
-
+	@Test
+	public void timeSortTest() {
+		timeTest.intSetImp(bigNum, bigNum);
+		
+		for(int idx = 0; idx < bigNum; idx++) {
+			timeTest.insert(bigNum - idx);
+		}
+		timeTest.report();
+	}
 }

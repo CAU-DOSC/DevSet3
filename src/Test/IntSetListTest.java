@@ -7,7 +7,11 @@ import Set.IntSetList;
 public class IntSetListTest {
 	IntSetList S = new IntSetList();
 
+	IntSetList timeTest = new IntSetList();
+	
 	final int bigNum = 50000;
+	
+	
 	
 	public IntSetListTest() {
 		S.intSetImp(5, 100);
@@ -50,15 +54,22 @@ public class IntSetListTest {
 		
 		assertArrayEquals(compareSort, S.report());
 	}
-	
 	@Test
-	public void testP() {
-		IntSetList timeTest = new IntSetList();
+	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
 	}
-
+	
+	@Test
+	public void timeSortTest() {
+		timeTest.intSetImp(bigNum, bigNum);
+		
+		for(int idx = 0; idx < bigNum; idx++) {
+			timeTest.insert(bigNum - idx);
+		}
+		timeTest.report();
+	}
 }

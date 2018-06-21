@@ -7,9 +7,10 @@ import org.junit.Test;
 import Set.IntSetArr;
 
 public class IntSetArrTest {
-
 	IntSetArr S = new IntSetArr();
 
+	IntSetArr timeTest = new IntSetArr();
+	
 	final int bigNum = 50000;
 	
 	public IntSetArrTest() {
@@ -53,15 +54,22 @@ public class IntSetArrTest {
 		
 		assertArrayEquals(compareSort, S.report());
 	}
-	
 	@Test
-	public void testP() {
-		IntSetArr timeTest = new IntSetArr();
+	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
 	}
-
+	
+	@Test
+	public void timeSortTest() {
+		timeTest.intSetImp(bigNum, bigNum);
+		
+		for(int idx = 0; idx < bigNum; idx++) {
+			timeTest.insert(bigNum - idx);
+		}
+		timeTest.report();
+	}
 }

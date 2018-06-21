@@ -8,17 +8,19 @@ public class main {
 		// TODO Auto-generated method stub
 		int[] v;
 		
-		final int m = 50;
-		final int maxval = 100;
+		final int m = 20000;
+		final int maxval = 20000;
 		
 		Random rand = new Random();
 		
-		IntSet S = new IntSetBitVec();
+		IntSet S = new IntSetBST();
 	    
 		S.intSetImp(m, maxval);
 
+		int inx = 0;
+		
 		while (S.size() < m)
-			S.insert(rand.nextInt(maxval));
+			S.insert(inx++);
 		
 		v = S.report();
 	    
