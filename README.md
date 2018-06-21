@@ -13,9 +13,11 @@
 * SET Implementation
 
 # Works to do
-* 각자 맡은 부분 코딩
-* JUnit Test(smoke test, boundary test)
-* Performance Test
+* Implementation of each code
+  * Unit test for implementations
+* Periodic(or continuous) build and smoke test
+* Performance tuning
+* Due to June 21st
 
 # 진행도
 분야 | 담당 | 진행도
@@ -30,9 +32,9 @@ Bins(buckets) | 강동원 | 100%
 * Java
 
 # 진행과정
+* 공통 Interface 정의
 * 각자 폴더에 Fork 하여 개별 작업 진행
+* 각 자료구조에 맞는 method 정의
 * master에게 Pull request
 * master는 Pull request 확인 후 이상없으면 merge
-
-
-
+* JUnit Test 생성 및 Performance tuning
