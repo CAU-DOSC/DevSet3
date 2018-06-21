@@ -10,9 +10,10 @@ import Set.IntSetBins;
 import Set.IntSetList;
 
 public class IntSetBinsTest {
-	
 	IntSetBins S = new IntSetBins();
-	
+		
+	IntSetList timeTest = new IntSetList();
+
 	final int bigNum = 50000;
 	
 	public IntSetBinsTest() {
@@ -51,14 +52,22 @@ public class IntSetBinsTest {
 		
 		assertArrayEquals(compareSort, S.report());
 	}
-	
 	@Test
-	public void testP() {
-		IntSetList timeTest = new IntSetList();
+	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
+	}
+	
+	@Test
+	public void timeSortTest() {
+		timeTest.intSetImp(bigNum, bigNum);
+		
+		for(int idx = 0; idx < bigNum; idx++) {
+			timeTest.insert(bigNum - idx);
+		}
+		timeTest.report();
 	}
 }

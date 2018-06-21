@@ -5,9 +5,10 @@ import org.junit.Test;
 import Set.IntSetBitVec;
 
 public class IntSetBitVecTest {
-	
 	IntSetBitVec S = new IntSetBitVec();
 
+	IntSetBitVec timeTest = new IntSetBitVec();
+	
 	final int bigNum = 50000;
 	
 	public IntSetBitVecTest() {
@@ -48,13 +49,22 @@ public class IntSetBitVecTest {
 	}
 	
 	@Test
-	public void testP() {
-		IntSetBitVec timeTest = new IntSetBitVec();
+	public void timeInsertTest() {
 		timeTest.intSetImp(bigNum, bigNum);
 		
 		for(int idx = 0; idx < bigNum; idx++) {
 			timeTest.insert(idx);
 		}
+		
+		System.out.println(timeTest.size());
 	}
-
+	
+	@Test
+	public void timeSortTest() {
+		timeTest.intSetImp(bigNum, bigNum);
+		
+		for(int idx = 0; idx < bigNum; idx++) {
+			timeTest.insert(bigNum - idx);
+		}
+	}
 }
